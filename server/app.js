@@ -7,8 +7,7 @@ import dbConnection from "./utils/dbConnection.js";
 
 //Routes
 import userRoute from "./routes/userRoute.js";
-
-
+import quizRoute from "./routes/quizRoute.js";
 
 dotenv.config();
 
@@ -17,7 +16,7 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
@@ -30,8 +29,8 @@ app.get("/", (req, res) => {
   res.send("Server running...");
 });
 
-app.use("/api/v1/user",userRoute);
- 
+app.use("/api/v1/user", userRoute);
+app.use("/api/v1/quiz", quizRoute);
 
 dbConnection().then(() => {
   app.listen(PORT, () => {

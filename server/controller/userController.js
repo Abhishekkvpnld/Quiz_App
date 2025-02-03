@@ -52,7 +52,7 @@ export const login = async (req, res) => {
     }
 
     let user = await User.findOne({
-      email: { $regex: new RegExp(`^${email}$`, "i") },
+      email: { $regex: new RegExp(`^${email}$`, "i") }, 
     });
 
     if (!user) {
@@ -75,12 +75,13 @@ export const login = async (req, res) => {
 
     user = {
       _id: user._id,
-      username: user.fullname,
+      username: user.username,
       email: user.email,
       phone: user.phone,
       role: user.role,
       profile: user.profile,
     };
+
 
     return res
       .status(200)

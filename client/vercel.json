@@ -1,0 +1,13 @@
+
+{
+    "routes": [
+      { "src": "/", "dest": "/" },
+      { "src": "/login", "dest": "/" },
+      { "src": "/quiz", "dest": "/" },
+      { "src": "/signup", "dest": "/" },
+      { "src": "/status/(.*)", "dest": "/" },
+      { "src": "/finished/(.*)", "dest": "/" }
+    ]
+  }
+    
+  

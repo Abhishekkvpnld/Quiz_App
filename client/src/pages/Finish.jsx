@@ -1,9 +1,19 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { useContext, useEffect } from "react";
+import UserContext from "../context/userContext";
 
 const Finish = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const { user } = useContext(UserContext)
+
+  useEffect(() => {
+    if (!user) {
+      return navigate("/login")
+    }
+  }, [user]);
 
   return (
     <div className="flex flex-col items-center w-full h-screen bg-gradient-to-r from-blue-400 to-purple-600">

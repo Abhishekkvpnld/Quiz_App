@@ -16,7 +16,8 @@ const Home = () => {
     if (!user) {
       return navigate("/login")
     }
-  }, []);
+  }, [user]);
+
 
   return (
     <div className="flex flex-col gap-4 ">

@@ -7,10 +7,10 @@ const quizResultSchema = new mongoose.Schema(
       ref: "User", 
       required: true,
     },
-    quiz: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-    },
+    // quiz: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   required: true,
+    // },
     score: {
       type: Number,
       required: true,
@@ -29,11 +29,12 @@ const quizResultSchema = new mongoose.Schema(
     },
     attemptedQuestions: {
       type: Number,
+      default:1
     //   required: true,
     },
     answers: [
       {
-        question: { type: mongoose.Schema.Types.ObjectId, ref: "Question", required: true },
+        question: { type:String, required: true },
         selectedOption: { type: String, required: true },
         isCorrect: { type: Boolean, required: true },
       },

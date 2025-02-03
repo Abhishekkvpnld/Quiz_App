@@ -11,4 +11,4 @@ router.get("/get-user",jwtAuth,getUser)
 router.get("/logout",logout); 
 
  
-export default router;
+export default router; 

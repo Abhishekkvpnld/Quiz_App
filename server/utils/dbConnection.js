@@ -8,5 +8,5 @@ const dbConnection = async () => {
     console.log(error);
   }
 };
-
-export default dbConnection;
+ 
+export default dbConnection; 
